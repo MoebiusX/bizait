@@ -1,4 +1,5 @@
-#!/bin/bash
-echo "Hello, World @ Staging" >> index.html
-nohup busybox httpd -f -p "${var.server_port}" &
+cat > index.html <<EOF
+<h1>Hello, World</h1>
+<p>Staging</p>
 EOF
+nohup busybox httpd -f -p "${server_port}" &
